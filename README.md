@@ -1,7 +1,8 @@
 
 ## Repository for Running Distributed JMeter cluster
 
-*Remarks: this repo assumes the use of* ***Ubuntu*** *instances*
+
+Repository by Kent Pun, for personal academic and scientific purposes. Feel free to contact me for any suggestions or fun collabs :)
 
 References:
 [How to build a distributed load testing infrastructure with AWS, Docker, and JMeter – by Dragos Campean](https://dragoscampean.medium.com/how-to-build-a-distributed-load-testing-infrastructure-with-aws-docker-and-jmeter-accf3c2aa3a3)
