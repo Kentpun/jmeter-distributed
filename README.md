@@ -1,7 +1,7 @@
 
 ## Repository for Running Distributed JMeter cluster
 
-*Remarks: this repo assume the use of ubuntu instances*
+*Remarks: this repo assumes the use of* ***Ubuntu*** *instances*
 
 References:
 [How to build a distributed load testing infrastructure with AWS, Docker, and JMeter – by Dragos Campean](https://dragoscampean.medium.com/how-to-build-a-distributed-load-testing-infrastructure-with-aws-docker-and-jmeter-accf3c2aa3a3)
@@ -14,4 +14,4 @@ References:
 4. execute `jmeter -n -t /path/to/scriptFile.jmx -Dserver.rmi.ssl.disable=true -R host1PrivateIP, host2PrivateIP,..., hostNPrivateIP -l /path/to/logfile.jtl` to run JMeter script in distributed mode
 
 
-*note: you may script from step 1, 2 & 3 in launch template*
+*note: you may include the shell scripts from step 1, 2 & 3 in launch template*
