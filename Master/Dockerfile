@@ -4,3 +4,5 @@ MAINTAINER kentpun
 
 # Expose port for JMeter Master
 EXPOSE 60000
+
+RUN mkdir /script

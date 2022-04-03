@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: master
+  namespace: jmeter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jmeter-master
+  template:
+    metadata:
+      labels:
+        app: jmeter-master
+        # env: fargate
+    spec:
+      containers:
+      - name: master
+        image: kentpun/jmeter-distributed:jmeter-master
+        ports:
+        - containerPort: 60000
+        resources:
+          limits:
+            cpu: "1"
+            memory: 4Gi
+          requests:
+            cpu: "1"
+            memory: 4Gi

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slave
+  namespace: jmeter
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jmeter-slave
+  template:
+    metadata:
+      labels:
+        app: jmeter-slave
+        # env: fargate
+    spec:
+      containers:
+      - name: slave
+        image: kentpun/jmeter-distributed:jmeter-slave
+        ports:
+        - containerPort: 50000
+        - containerPort: 1099
+        resources:
+          limits:
+            cpu: "4"
+            memory: 16Gi
+          requests:
+            cpu: "2"
+            memory: 4Gi
