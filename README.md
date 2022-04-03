@@ -12,8 +12,26 @@ Details:
 1. Ability to start pods on-demand
 2. Automated script
 
+### Running JMeter master-slave nodes on Kubernetes
 
-### Steps to start
+##### Perquisites
+
+1. install kubectl
+2. install kustomize
+
+##### Useful Commands
+
+To deploy:
+```
+make deploy
+```
+
+To delete all resources:
+```
+make delete
+```
+
+### Steps to run JMeter master-slave nodes on instances
 
 1. Execute `./startup-script.sh` on each node
 2. Execute `Master/startup-script.sh` on Master node
