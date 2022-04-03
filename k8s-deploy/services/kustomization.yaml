@@ -3,6 +3,9 @@ kind: Kustomization
 metadata:
   name: services
 
+bases:
+- ../deployments
+
 resources:
 - jmeter-master-service.yaml
 - jmeter-slave-service.yaml
