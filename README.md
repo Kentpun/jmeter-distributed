@@ -6,6 +6,13 @@
 References:
 [How to build a distributed load testing infrastructure with AWS, Docker, and JMeter – by Dragos Campean](https://dragoscampean.medium.com/how-to-build-a-distributed-load-testing-infrastructure-with-aws-docker-and-jmeter-accf3c2aa3a3)
 
+### [WIP]: To support on-demand Slave nodes
+
+Details:
+1. Ability to create and terminate spot instances
+2. Automated script
+
+
 ### Steps to start
 
 1. Execute `./startup-script.sh` on each node
