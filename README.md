@@ -4,7 +4,7 @@
 References:
 [How to build a distributed load testing infrastructure with AWS, Docker, and JMeter, by Dragos Campean](https://dragoscampean.medium.com/how-to-build-a-distributed-load-testing-infrastructure-with-aws-docker-and-jmeter-accf3c2aa3a3)
 
-###Steps to start
+### Steps to start
 
 1. execute startup-script.sh on each node
 2. execute `Master/startup-script.sh` on Master node
