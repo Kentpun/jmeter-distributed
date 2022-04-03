@@ -14,7 +14,7 @@ Details:
 
 ### Running JMeter master-slave nodes on Kubernetes
 
-##### Perquisites
+##### Prerequisite
 
 1. install kubectl
 2. install kustomize
