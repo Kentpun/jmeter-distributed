@@ -8,9 +8,9 @@ References:
 
 ### Steps to start
 
-1. Execute `./startup-script.sh` on each node *
-2. Execute `Master/startup-script.sh` on Master node *
-3. Execute `Slave/startup-script.sh` on Slave node(s) *
+1. Execute `./startup-script.sh` on each node
+2. Execute `Master/startup-script.sh` on Master node
+3. Execute `Slave/startup-script.sh` on Slave node(s)
 4. (optional) Upload the .jmx file to s3 and execute following to download .jmx file to JMeter nodes
 ```yes | sudo apt install awscli
 aws s3 cp s3://bucket-name/folder-name/test-plan.jmx /home/ubuntu/dest-file-name/test-plan.jmx
