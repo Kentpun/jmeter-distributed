@@ -9,3 +9,6 @@ bases:
 resources:
 - jmeter-master-service.yaml
 - jmeter-slave-service.yaml
+- jmeter-grafana-service.yaml
+- jmeter-grafana-reporter-service.yaml
+- jmeter-influxdb-service.yaml

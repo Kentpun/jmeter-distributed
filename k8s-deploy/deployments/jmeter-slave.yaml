@@ -4,7 +4,7 @@ metadata:
   name: slave
   namespace: jmeter
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: jmeter-slave
@@ -25,5 +25,5 @@ spec:
             cpu: "4"
             memory: 16Gi
           requests:
-            cpu: "2"
-            memory: 4Gi
+            cpu: "1"
+            memory: 256M

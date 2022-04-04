@@ -4,8 +4,10 @@
 
 Repository by Kent Pun, for personal academic and scientific purposes. Feel free to contact me for any suggestions or fun collabs :)
 
-References:
-[How to build a distributed load testing infrastructure with AWS, Docker, and JMeter – by Dragos Campean](https://dragoscampean.medium.com/how-to-build-a-distributed-load-testing-infrastructure-with-aws-docker-and-jmeter-accf3c2aa3a3)
+###### References:
+
+1. [https://github.com/kubernauts/jmeter-kubernetes](https://github.com/kubernauts/jmeter-kubernetes)
+2. [How to build a distributed load testing infrastructure with AWS, Docker, and JMeter – by Dragos Campean](https://dragoscampean.medium.com/how-to-build-a-distributed-load-testing-infrastructure-with-aws-docker-and-jmeter-accf3c2aa3a3)
 
 ### [WIP]: To support on-demand resource
 
@@ -22,9 +24,37 @@ Details:
 
 ##### Useful Commands
 
+To start on miniKube:
+*note: change to arguments according to local OS*
+```
+make miniKube
+```
+
 To deploy:
 ```
 make deploy
+# wait until pods are ready, then run:
+sh dashboard.sh
+```
+
+To view Grafana dashboard on [localhost:3000](localhost:3000):
+```
+make grafana-local
+```
+then import the default `influx-db-template.json` dashboard template
+
+Prepare Test plan [Must do either one]:
+1. configure Backend Listener to use InfluxDB
+2. configure Backend Listener to use Graphite API
+
+Execute Test plan:
+```
+sh jmeter-test.sh /path/to/testplan
+```
+
+Execute Test plan with CSV data:
+```
+sh jmeter-test-csv.sh /path/to/testplan/dir
 ```
 
 To delete all resources:

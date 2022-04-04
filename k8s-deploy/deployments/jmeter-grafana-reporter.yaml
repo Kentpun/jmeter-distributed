@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reporter
+  namespace: jmeter
+  labels:
+    app: reporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reporter
+  template:
+    metadata:
+      labels:
+        app: reporter
+    spec:
+      containers:
+      - name: jmreporter
+        image: kubernautslabs/jmeter-reporter:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8686

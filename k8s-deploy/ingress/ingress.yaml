@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jmeter-ingress
+  namespace: jmeter
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/force-ssl-redirect: "false" # set true to force redirect to https
+    cert-manager.io/cluster-issuer: "letsencrypt"
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    cert-manager.io/issue-temporary-certificate: "true"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "16k"
+spec:
+  tls:
+    - secretName: tls-secret
+  rules:
+  - host: jmeter.techindependence.com
+    http:
+      paths:
+      - path: /grafana
+        backend:
+          serviceName: jmeter-grafana
+          servicePort: 3000
+      - path: /reporter
+        backend:
+          serviceName: jmeter-reporter
+          servicePort: 8686

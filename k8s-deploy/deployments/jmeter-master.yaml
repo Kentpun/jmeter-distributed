@@ -14,15 +14,29 @@ spec:
         app: jmeter-master
         # env: fargate
     spec:
+      initContainers:
+      - name: init-container
+        image: busybox
+        command: ['sh', '-c', 'mkdir -p /jmeter && touch /jmeter/load_test && ls /jmeter']
       containers:
       - name: master
         image: kentpun/jmeter-distributed:jmeter-master
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
         ports:
         - containerPort: 60000
         resources:
           limits:
-            cpu: "1"
+            cpu: "0.5"
             memory: 4Gi
           requests:
-            cpu: "1"
+            cpu: "0.5"
             memory: 4Gi
+        volumeMounts:
+        - name: loadtest
+          mountPath: /load_test
+          subPath: "load_test"
+      volumes:
+      - name: loadtest
+        configMap:
+          name: jmeter-load-test

@@ -12,7 +12,7 @@ ENV Xms 256m
 ENV Xmx 512m
 ENV MaxMetaspaceSize 1024m
 # Change timezone to local time
-ENV TZ="Europe/Bucharest"
+ENV TZ="Asia/Hong_Kong"
 RUN export TZ=$TZ
 # Install jmeter
 RUN microdnf install yum

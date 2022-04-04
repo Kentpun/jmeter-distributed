@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: influxdb-setup
+  namespace: jmeter
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: create-credentials
+        image: influxdb:1.8
+        command:
+          - /bin/bash
+          - "-c"
+          - |
+            influx -execute 'CREATE DATABASE jmeter'
+# influx setup --host http://jmeter-influxdb:8086 --bucket jmeter --org InfluxData --password admin123 --username admin --token secret-token --force

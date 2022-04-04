@@ -7,5 +7,10 @@ bases:
 - ../namespace
 
 resources:
+- jmeter-master-configmap.yaml
 - jmeter-master.yaml
 - jmeter-slave.yaml
+- jmeter-grafana.yaml
+- jmeter-grafana-reporter.yaml
+- jmeter-influxdb.yaml
+- jmeter-influxdb-configmap.yaml

@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: jobs
+
+bases:
+- ../namespace
+
+resources:
+# - influxdb-template-configmap.yaml
+- influxdb-setup.yaml
+- grafana-setup.yaml
+- jmeter-master-preparation-job.yaml
