@@ -4,6 +4,10 @@
 aws-ec2/
 Master/jmeter-aws-auto.sh
 k8s-deploy/.DS_Store
+*/.terraform
+*/.terraform.lock.hcl
+*/terraform.tfstate*
+sampleTestPlan/
 
 # dependencies
 cert/

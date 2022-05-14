@@ -25,8 +25,8 @@ grafana_pod=`kubectl get po -n $tenant | grep grafana | awk '{print $1}'`
 #Get Master pod details
 
 master_pod=`kubectl get po -n $tenant | grep master | awk '{print $1}'`
-
-kubectl exec -ti -n $tenant $master_pod -- cp -r /load_test /jmeter/load_test
+kubectl exec -ti -n $tenant $master_pod -- bash -c "mkdir -p /jmeter && ls -la /jmeter"
+kubectl exec -ti -n $tenant $master_pod -- bash -c "cp -r /load_test /jmeter/load_test && ls -la /jmeter"
 
 kubectl exec -ti -n $tenant $master_pod -- chmod 755 /jmeter/load_test
 

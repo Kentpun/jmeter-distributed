@@ -16,6 +16,7 @@ minikube:
 	--extra-config=scheduler.address=0.0.0.0 \
 	--extra-config=controller-manager.address=0.0.0.0
 	minikube addons enable ingress
+
 	minikube addons enable default-storageclass
 	minikube addons enable storage-provisioner
 	minikube addons enable metrics-server
@@ -24,6 +25,8 @@ deploy:
 	$(KUSTOMIZE) build namespace | $(KUBECTL) apply -f -
 	$(KUSTOMIZE) build deployments | $(KUBECTL) apply -f -
 	$(KUSTOMIZE) build services | $(KUBECTL) apply -f -
+	$(KUSTOMIZE) build ingress | $(KUBECTL) apply -f -
+
 	# $(KUSTOMIZE) build jobs | $(KUBECTL) apply -f -
 
 
