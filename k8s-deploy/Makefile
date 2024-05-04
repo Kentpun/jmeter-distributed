@@ -35,7 +35,7 @@ influxdb-local:
 	$(KUBECTL) port-forward service/jmeter-influxdb 8086:8086 -n $(NAMESPACE)
 
 grafana-local:
-	$(KUBECTL) port-forward service/grafana 3000:3000 -n $(NAMESPACE)
+	$(KUBECTL) port-forward service/jmeter-grafana 3000:3000 -n $(NAMESPACE)
 
 delete:
 	$(KUBECTL) delete -f services/jmeter-master-service.yaml
