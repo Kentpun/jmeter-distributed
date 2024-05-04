@@ -11,6 +11,7 @@ resources:
 - jmeter-master.yaml
 - jmeter-slave.yaml
 - jmeter-grafana.yaml
+- jmeter-grafana-configmap.yaml
 - jmeter-grafana-reporter.yaml
 - jmeter-influxdb.yaml
 - jmeter-influxdb-configmap.yaml

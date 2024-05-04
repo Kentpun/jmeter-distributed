@@ -6,7 +6,7 @@ NAMESPACE = jmeter
 
 minikube:
 	$(MINIKUBE) start \
-	--kubernetes-version=v1.18.15 \
+	--kubernetes-version=v1.29.0 \
 	--vm-driver=hyperkit \
 	--cpus=4 \
 	--memory=16g \
